@@ -1,0 +1,18 @@
+services:
+  jpa:
+    image: jpa:1.5
+    ports:
+      - 8080:8080
+  postgresdbz2:
+    image: postgres:latest
+    ports:
+      - 5000:5432
+    environment:
+      - POSTGRES_PASSWORD=admin
+    volumes:
+      - db-data:/var/lib/postgresql
+volumes:
+  db-data:
+    driver: local
+
+

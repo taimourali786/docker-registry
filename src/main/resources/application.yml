@@ -1,0 +1,19 @@
+---
+spring:
+  datasource:
+    url: jdbc:postgresql://postgresdbz2:5432/postgres?currentSchema=jpa&user=postgres&password=admin
+    driver-class-name: org.postgresql.Driver
+    username: {POSTGRES_USER:postgres}
+    password: {POSTGRES_ADMIN:admin}
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        ddl-auto: update
+    show-sql: true
+    open-in-view: false
+logging:
+  level:
+    com.zaxxer.hikari.pool: INFO
+    com.zaxxer.hikari.HikariConfig: INFO
+    com.zaxxer.hikari: INFO
